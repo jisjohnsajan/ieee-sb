@@ -5,6 +5,11 @@ import './minimal.css';
 import './spotlight.css';
 
 const API_BASE = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
+// The app ships inside a subfolder (badge-profiles/), but Vite's base only
+// rewrites bundled URLs - string literals in JSX would still resolve at the site
+// root and 404. Resolve every asset path against the configured base instead.
+const assetUrl = filePath => `${import.meta.env.BASE_URL || '/'}${String(filePath).replace(/^\/+/, '')}`;
+
 async function api(path) {
   const response = await fetch(`${API_BASE}${path}`);
   const data = await response.json().catch(() => ({}));
@@ -12,7 +17,7 @@ async function api(path) {
   return data;
 }
 function Logo() {
-  return <a className="brand" href="/" aria-label="IEEE VJEC home"><span className="brand-mark"><img src="/ieee-vjec-logo.png" alt="" /></span><span className="brand-text">IEEE <strong>VJEC</strong><small>Student Branch</small></span></a>;
+  return <a className="brand" href="/" aria-label="IEEE VJEC home"><span className="brand-mark"><img src={assetUrl('/ieee-vjec-logo.png')} alt="" /></span><span className="brand-text">IEEE <strong>VJEC</strong><small>Student Branch</small></span></a>;
 }
 // Slugs with a background-removed silhouette render as a cutout. Everyone else
 // uses their uploaded photo, styled to sit inside the same composition.
@@ -38,7 +43,8 @@ function Portrait({ profile }) {
   const cutout = CUTOUTS[profile.slug];
   const src = cutout || (profile.photo?.startsWith('/') && API_BASE ? `${API_BASE}${profile.photo}` : profile.photo);
   if (!src) return null;
-  return <img className={`hero-person ${cutout ? 'cutout' : 'profile-photo'}`} src={src} alt={profile.name} />;
+  const resolved = cutout ? assetUrl(src) : src;
+  return <img className={`hero-person ${cutout ? 'cutout' : 'profile-photo'}`} src={resolved} alt={profile.name} />;
 }
 function PublicProfile({ slug }) {
   const [data, setData] = useState(null);
