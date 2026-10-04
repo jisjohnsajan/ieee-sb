@@ -182,5 +182,30 @@ function PublicProfile({ slug }) {
     {qrOpen && profile && <div className="modal-overlay" onMouseDown={() => setQrOpen(false)}><div className="qr-dialog" role="dialog" aria-modal="true" aria-label={`QR code for ${profile.name}`} onMouseDown={event => event.stopPropagation()}><button className="dialog-close" onClick={() => setQrOpen(false)} aria-label="Close"><X size={20} /></button><span className="eyebrow">SCAN TO CONNECT / {profile.name}</span><h2>{profile.name}</h2><div className="qr-frame"><img src={`${API_BASE}/api/profiles/${encodeURIComponent(profile.slug)}/qr`} alt={`QR code for ${profile.name}`} /></div><p>Scan this code to open the coordinator profile.</p><button className="modal-copy" onClick={copyUrl}><Copy size={18} /> Copy profile link</button></div></div>}
   </div>;
 }
-const slug = window.location.pathname.startsWith('/profile/') ? decodeURIComponent(window.location.pathname.slice(9)) : 'alan-antony';
-createRoot(document.getElementById('root')).render(<PublicProfile slug={slug} />);
+// This app is published as static files inside a subfolder of another site, so a
+// path like /badge-profiles/profile/alan-antony has no file behind it and the host
+// answers with its own 404. Hash routes (#/profile/:slug) work on any static host
+// with no rewrite rules, so accept both: hash first, then path, then the default.
+function routeSlug() {
+  const hash = window.location.hash.replace(/^#/, '');
+  if (hash.startsWith('/profile/')) {
+    const fromHash = decodeURIComponent(hash.slice('/profile/'.length).replace(/\/$/, ''));
+    if (fromHash) return fromHash;
+  }
+  const match = window.location.pathname.match(/\/profile\/([^/]+)\/?$/);
+  return match ? decodeURIComponent(match[1]) : 'alan-antony';
+}
+function Router() {
+  const [slug, setSlug] = useState(routeSlug);
+  useEffect(() => {
+    const sync = () => setSlug(routeSlug());
+    window.addEventListener('hashchange', sync);
+    window.addEventListener('popstate', sync);
+    return () => {
+      window.removeEventListener('hashchange', sync);
+      window.removeEventListener('popstate', sync);
+    };
+  }, []);
+  return <PublicProfile slug={slug} />;
+}
+createRoot(document.getElementById('root')).render(<Router />);
