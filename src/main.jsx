@@ -17,22 +17,22 @@ function Logo() {
 // Slugs with a background-removed silhouette render as a cutout. Everyone else
 // uses their uploaded photo, styled to sit inside the same composition.
 const CUTOUTS = {
-  'abdul-basith-p-v': '/cutouts/abdul-basith-p-v.webp',
-  'adarsh-k-biju': '/cutouts/adarsh-k-biju.webp',
-  'ajith-mathew': '/cutouts/ajith-mathew.webp',
-  'alan-antony': '/cutouts/alan-antony.webp',
-  aswin: '/cutouts/aswin.webp',
-  'elsitta-binu': '/cutouts/elsitta-binu.webp',
-  'leo-mathew-roy': '/cutouts/leo-mathew-roy.webp',
-  'milan-biju': '/cutouts/milan-biju.webp',
-  'samanway-t-k': '/cutouts/samanway-t-k.webp',
-  'sandra-nambiar': '/cutouts/sandra-nambiar.webp',
-  'sanju-santy': '/cutouts/sanju-santy.webp',
-  'shiva-keshav-v': '/cutouts/shiva-keshav-v.webp',
-  'simon-joseph': '/cutouts/simon-joseph.webp',
-  'tessa-mariya': '/cutouts/tessa-mariya.webp',
-  'abhin-k-shibu-james': '/cutouts/abhin-k-shibu-james.webp',
-  'abhiram-m-s': '/cutouts/abhiram-m-s.webp',
+  'abdul-basith-p-v': '/cutouts/member-01.webp',
+  'aswin': '/cutouts/member-02.webp',
+  'adarsh-k-biju': '/cutouts/member-03.webp',
+  'sandra-nambiar': '/cutouts/member-04.webp',
+  'milan-biju': '/cutouts/member-05.webp',
+  'tessa-mariya': '/cutouts/member-06.webp',
+  'ajith-mathew': '/cutouts/member-07.webp',
+  'shiva-keshav-v': '/cutouts/member-08.webp',
+  'abhin-k-shibu-james': '/cutouts/member-09.webp',
+  'elsitta-binu': '/cutouts/member-10.webp',
+  'samanway-t-k': '/cutouts/member-11.webp',
+  'leo-mathew-roy': '/cutouts/member-12.webp',
+  'sanju-santy': '/cutouts/member-13.webp',
+  'abhiram-m-s': '/cutouts/member-14.webp',
+  'simon-joseph': '/cutouts/member-15.webp',
+  'alan-antony': '/cutouts/member-16.webp',
 };
 function Portrait({ profile }) {
   const cutout = CUTOUTS[profile.slug];
