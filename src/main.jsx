@@ -170,8 +170,7 @@ function PublicProfile({ slug }) {
                     {profile.bio && <div><dt>MEMBER ID</dt><dd>{profile.bio.replace(/^IEEE Member ID:\s*/, '')}</dd></div>}
                   </dl>}
                 </div>
-                <span className="banner-scroll">Scroll to connect <ArrowDown size={18} /></span>
-                {profile && <div className="banner-connect"><h2>Let’s connect.</h2>
+                                {profile && <div className="banner-connect"><h2>Let’s connect.</h2>
                   <div className="account-list">{accounts.map(({ label, href, icon: Icon }, index) => <a className="account-link" key={`${label}-${index}`} href={href} target="_blank" rel="noreferrer"><span className="account-icon"><Icon size={22} /></span><span>{label}</span><ArrowUpRight className="account-arrow" size={20} /></a>)}</div>
                   {!accounts.length && <p className="banner-empty">Account links will appear here when added.</p>}
                   <div className="profile-actions"><button onClick={downloadVcard}><ArrowDownToLine size={18} /> Save contact</button><button onClick={share}><Share2 size={18} /> Share profile</button><button onClick={() => setQrOpen(true)}><QrCode size={18} /> Show QR code</button><button onClick={copyUrl}><Copy size={18} /> Copy profile link</button>{contactLinks.map(({ label, href, icon: Icon }) => <a key={label} href={href}><Icon size={18} /> {label}</a>)}</div>

@@ -34,8 +34,7 @@
 .banner-kicker,.banner-role{display:block;font-size:11px;font-weight:700;letter-spacing:.16em;color:#dcecff;text-transform:uppercase}
 .banner-content h1{font:800 clamp(30px,3.7vw,56px)/1.05 'Manrope',sans-serif;letter-spacing:-.05em;text-transform:uppercase;margin:7px 0 6px;color:#fff;overflow-wrap:anywhere}
 .banner-role{font-size:12px;letter-spacing:.08em}
-.banner-scroll{display:inline-flex;align-items:center;gap:11px;flex:none;padding:13px 0;color:#fff;border-bottom:1px solid #b9d7ff;font-size:13px;font-weight:700;transition:transform .2s,border-color .2s}
-.banner-scroll:hover{transform:translateY(-3px);border-color:#fff}
+
 @keyframes bannerTextIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .about-section{background:radial-gradient(ellipse 55% 30% at 50% 0%,#0b235d88,transparent),#030918;color:#eff7ff;border:0;padding-top:115px}
 .about-kicker{color:#7cdfff}
@@ -63,8 +62,8 @@
 .state-page p{color:#bad0e4}
 .loading-profile{background:#030918;color:#a6c3dc}
 @media(max-width:900px){.hero-word{transform:translate(-50%,-50%) scaleX(1.12)}.hero-person{width:95vw}.hero-banner{height:43%;bottom:-14%}}
-@media(max-width:650px){.site-header{height:66px}.hero-stage{height:100svh;min-height:660px}.hero-caption{top:82px;left:20px;font-size:8px}.hero-word{top:50%;font-size:min(68svh,650px);transform:translate(-50%,-50%) scaleX(.7)}.hero-person.cutout{width:145vw;height:88%;bottom:8%}.hero-person.profile-photo,.hero-banner{width:155%;left:-27.5%;height:39%;bottom:-9%;border-radius:50% 50% 0 0/31% 31% 0 0}.banner-content{left:20px;right:20px;bottom:22px;align-items:end;gap:14px}.banner-content h1{font-size:clamp(25px,7.5vw,38px)}.banner-kicker{font-size:8px}.banner-role{font-size:9px}.banner-scroll{font-size:11px;gap:5px;padding:9px 0}.banner-scroll svg{width:15px}.about-section{padding-top:88px}.profile-details div+div{border-color:#2c4465}}
-@media(max-width:420px){.hero-word{transform:translate(-50%,-50%) scaleX(.6)}.hero-person.cutout{width:154vw;height:86%;bottom:9%}.banner-content{display:block}.banner-scroll{margin-top:15px}.banner-content h1{font-size:31px}.hero-banner{height:43%;bottom:-11%}}
+@media(max-width:650px){.site-header{height:66px}.hero-stage{height:100svh;min-height:660px}.hero-caption{top:82px;left:20px;font-size:8px}.hero-word{top:50%;font-size:min(68svh,650px);transform:translate(-50%,-50%) scaleX(.7)}.hero-person.cutout{width:145vw;height:88%;bottom:8%}.hero-person.profile-photo,.hero-banner{width:155%;left:-27.5%;height:39%;bottom:-9%;border-radius:50% 50% 0 0/31% 31% 0 0}.banner-content{left:20px;right:20px;bottom:22px;align-items:end;gap:14px}.banner-content h1{font-size:clamp(25px,7.5vw,38px)}.banner-kicker{font-size:8px}.banner-role{font-size:9px}.about-section{padding-top:88px}.profile-details div+div{border-color:#2c4465}}
+@media(max-width:420px){.hero-word{transform:translate(-50%,-50%) scaleX(.6)}.hero-person.cutout{width:154vw;height:86%;bottom:9%}.banner-content{display:block}.banner-content h1{font-size:31px}.hero-banner{height:43%;bottom:-11%}}
 @media(max-width:360px){.hero-word{transform:translate(-50%,-50%) scaleX(.54)}.hero-person.cutout{width:162vw}.banner-content h1{font-size:27px}}
 /* The sticky scene stays in place while the contact banner rises over it. */
 .hero-stage{height:180svh;min-height:0;overflow:clip;background:none}
@@ -72,7 +71,7 @@
 .hero-inner{position:sticky;top:0;height:100svh;min-height:600px;overflow:hidden;background:radial-gradient(ellipse 55% 70% at 50% 5%,#216bff, #092966 55%,#01050d 100%)}
 .hero-beams{display:none}
 .hero-inner:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 8%,#00081e70 9% 11%,transparent 13% 22%);mask-image:linear-gradient(#000,transparent 90%);filter:blur(5px)}
-.hero-word{top:52%;font-size:clamp(160px,34vw,480px);letter-spacing:0;padding:0;gap:.065em;line-height:1;transform:translate(-50%,-50%) scaleY(1.3);background:none;filter:drop-shadow(0 0 18px #12aaff66)}
+.hero-word{top:52%;font-size:min(46vw,74svh);letter-spacing:0;padding:0;gap:.065em;line-height:1;transform:translate(-50%,-50%) scaleY(1.25) scaleX(1.35);background:none;filter:drop-shadow(0 0 18px #12aaff66)}
 .hero-word span{flex:none;background:linear-gradient(180deg,#fff 5%,#e9faff 27%,#41e6ff 58%,#0572f0 88%);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .hero-word:after{display:none}
 .hero-person.cutout{height:94%;bottom:0;width:min(72vw,950px)}
@@ -81,7 +80,7 @@
 .banner-content{position:relative;inset:auto;width:min(1180px,69%);margin:0 auto;padding:7svh 0 30px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;animation:bannerTextIn .6s 1.75s both}
 .banner-content>div:first-child{flex:1}
 .banner-content h1{font-size:clamp(28px,4vw,48px)}
-.banner-scroll{font-size:12px;border:0}
+
 .banner-social{flex:0 0 100%;width:100%;margin-top:22px;opacity:var(--social-opacity,0);visibility:hidden;transform:translateY(calc(24px * (1 - var(--social-opacity,0))));transition:visibility .1s}
 .banner-social .account-list{max-width:700px}
 .rising-panel{z-index:6}
@@ -98,7 +97,7 @@
 .branch-grid{grid-template-columns:1fr;padding-top:19px;gap:0}.branch-note{margin-bottom:12px}.branch-intro h3{font-size:28px}.branch-role{margin-top:8px}.branch-bio{margin-top:15px;max-width:760px}
 .profile-details{margin-top:25px}.profile-details div{padding-top:17px;padding-bottom:17px}.profile-actions{margin-top:21px}
 .in-view .branch-intro{animation:gentleIn .55s both}
-@media(max-width:650px){.hero-inner{min-height:600px}.hero-word{top:44%;font-size:37vw;transform:translate(-50%,-50%) scaleY(2.45)}.hero-person.cutout{width:120vw;height:81%;bottom:5%}.hero-caption{top:80px}.rising-panel{border-radius:50% 50% 0 0/8% 8% 0 0}.banner-content{width:70%;padding-top:6svh;gap:8px}.banner-content>div:first-child{flex-basis:100%}.banner-content h1{font-size:29px}.banner-scroll{margin:2px 0 0;padding:4px 0}.banner-social{margin-top:17px}.banner-social .account-link{min-height:58px}.banner-role{font-size:10px}.about-section{padding:28px 0 38px}.branch-heading{font-size:32px;margin-bottom:18px}.profile-details{margin-top:23px}}
+@media(max-width:650px){.hero-inner{min-height:600px}.hero-word{top:44%;font-size:37vw;transform:translate(-50%,-50%) scaleY(2.45)}.hero-person.cutout{width:120vw;height:81%;bottom:5%}.hero-caption{top:80px}.rising-panel{border-radius:50% 50% 0 0/8% 8% 0 0}.banner-content{width:70%;padding-top:6svh;gap:8px}.banner-content>div:first-child{flex-basis:100%}.banner-content h1{font-size:29px}.banner-social{margin-top:17px}.banner-social .account-link{min-height:58px}.banner-role{font-size:10px}.about-section{padding:28px 0 38px}.branch-heading{font-size:32px;margin-bottom:18px}.profile-details{margin-top:23px}}
 @media(max-width:650px){.hero-word{font-size:48vw;transform:translate(-50%,-50%) scaleY(2)}.banner-content{padding-top:6svh}}
 @media(prefers-reduced-motion:reduce){.hero-stage{height:auto}.hero-inner{position:relative;height:auto;min-height:100svh}.hero-type-motion,.portrait-motion{height:100svh;transform:none}.rising-panel{position:relative;top:auto;margin-top:74svh;min-height:480px;height:auto;transform:none;animation:none}.banner-content{animation:none}.banner-social{opacity:1;visibility:visible;transform:none}.hero-person{opacity:1;animation:none;transform:translateX(-50%)}.hero-word span{animation:none}}
 
@@ -151,12 +150,12 @@ html::-webkit-scrollbar{display:none}
    Identity, facts and socials all sit on the light blue arc; the dark
    Profile & contact section has been removed. */
 .banner-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);
-  grid-template-areas:"ident connect" "facts scroll";
+  grid-template-areas:"ident connect" "facts facts";
   align-items:start;column-gap:8%;row-gap:30px;
   width:min(1240px,88vw);padding:9svh 0 7svh;
   transform:translate3d(0,var(--content-offset,0px),0);will-change:transform}
 .banner-identity{grid-area:ident;min-width:0}
-.banner-scroll{grid-area:scroll;justify-self:end;align-self:end}
+
 .banner-facts{grid-area:facts;margin:28px 0 0;display:grid;
   grid-template-columns:repeat(auto-fit,minmax(128px,max-content));gap:14px 34px}
 .banner-facts dt{font:700 10px/1 'Space Mono',monospace;letter-spacing:.16em;color:#8fb6ea;margin:0 0 8px}
@@ -170,9 +169,9 @@ html::-webkit-scrollbar{display:none}
 .banner-empty{color:#d3e6ff;font-size:14px;line-height:1.6;margin:0}
 .banner-connect .profile-actions{margin-top:24px;padding-top:20px;border-top:1px solid #ffffff2e}
 @media(max-width:900px){
-  .banner-content{grid-template-columns:1fr;grid-template-areas:"ident" "connect" "facts" "scroll";
+  .banner-content{grid-template-columns:1fr;grid-template-areas:"ident" "connect" "facts";
     row-gap:22px;width:min(88vw,520px)}
-  .banner-scroll{justify-self:start}
+  
   .banner-facts{margin-top:22px}
   .banner-connect{padding-top:0}
 }
