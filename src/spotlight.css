@@ -85,7 +85,7 @@
 .banner-social{flex:0 0 100%;width:100%;margin-top:22px;opacity:var(--social-opacity,0);visibility:hidden;transform:translateY(calc(24px * (1 - var(--social-opacity,0))));transition:visibility .1s}
 .banner-social .account-list{max-width:700px}
 .rising-panel{z-index:6}
-.banner-content{padding-top:calc(7svh + var(--content-offset,0px))}
+.banner-content{padding-top:7svh}
 .social-visible .banner-social{visibility:visible}
 .banner-social h2{font:800 clamp(27px,4vw,42px)/1.1 'Manrope',sans-serif;letter-spacing:-.04em;margin:0 0 17px}
 .banner-social .account-link{border-color:#b1d5ff70;min-height:64px;color:#fff}
@@ -99,7 +99,7 @@
 .profile-details{margin-top:25px}.profile-details div{padding-top:17px;padding-bottom:17px}.profile-actions{margin-top:21px}
 .in-view .branch-intro{animation:gentleIn .55s both}
 @media(max-width:650px){.hero-inner{min-height:600px}.hero-word{top:44%;font-size:37vw;transform:translate(-50%,-50%) scaleY(2.45)}.hero-person.cutout{width:120vw;height:81%;bottom:5%}.hero-caption{top:80px}.rising-panel{border-radius:50% 50% 0 0/8% 8% 0 0}.banner-content{width:70%;padding-top:6svh;gap:8px}.banner-content>div:first-child{flex-basis:100%}.banner-content h1{font-size:29px}.banner-scroll{margin:2px 0 0;padding:4px 0}.banner-social{margin-top:17px}.banner-social .account-link{min-height:58px}.banner-role{font-size:10px}.about-section{padding:28px 0 38px}.branch-heading{font-size:32px;margin-bottom:18px}.profile-details{margin-top:23px}}
-@media(max-width:650px){.hero-word{font-size:48vw;transform:translate(-50%,-50%) scaleY(2)}.banner-content{padding-top:calc(6svh + var(--content-offset,0px))}}
+@media(max-width:650px){.hero-word{font-size:48vw;transform:translate(-50%,-50%) scaleY(2)}.banner-content{padding-top:6svh}}
 @media(prefers-reduced-motion:reduce){.hero-stage{height:auto}.hero-inner{position:relative;height:auto;min-height:100svh}.hero-type-motion,.portrait-motion{height:100svh;transform:none}.rising-panel{position:relative;top:auto;margin-top:74svh;min-height:480px;height:auto;transform:none;animation:none}.banner-content{animation:none}.banner-social{opacity:1;visibility:visible;transform:none}.hero-person{opacity:1;animation:none;transform:translateX(-50%)}.hero-word span{animation:none}}
 
 /* Every cutout is normalised to one 3:4 canvas, so sizing by height alone keeps
@@ -153,7 +153,8 @@ html::-webkit-scrollbar{display:none}
 .banner-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);
   grid-template-areas:"ident connect" "facts scroll";
   align-items:start;column-gap:8%;row-gap:30px;
-  width:min(1240px,88vw);padding:calc(9svh + var(--content-offset,0px)) 0 7svh}
+  width:min(1240px,88vw);padding:9svh 0 7svh;
+  transform:translate3d(0,var(--content-offset,0px),0);will-change:transform}
 .banner-identity{grid-area:ident;min-width:0}
 .banner-scroll{grid-area:scroll;justify-self:end;align-self:end}
 .banner-facts{grid-area:facts;margin:28px 0 0;display:grid;
